@@ -12,10 +12,10 @@
 
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+    box-shadow: 0 0 20px rgba(100, 116, 139, 0.4);
   }
   50% {
-    box-shadow: 0 0 30px rgba(168, 85, 247, 0.6);
+    box-shadow: 0 0 30px rgba(100, 116, 139, 0.6);
   }
 }
 
@@ -54,12 +54,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #8b5cf6, #ec4899);
+  background: linear-gradient(to bottom, #475569, #64748b);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #7c3aed, #db2777);
+  background: linear-gradient(to bottom, #334155, #475569);
 }
 
 /* Glass morphism effect */
@@ -71,5 +71,5 @@
 
 /* Custom focus styles */
 .focus-ring {
-  @apply focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-slate-900;
+  @apply focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-900;
 }

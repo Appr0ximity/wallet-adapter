@@ -13,15 +13,15 @@ function App() {
     <ConnectionProvider endpoint={devnet}>
       <WalletProvider wallets={[]} autoConnect>
         <WalletModalProvider>
-          <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 animate-gradient">
+          <div className="min-h-screen bg-gradient-to-br from-black via-slate-900 to-black animate-gradient">
             <div className="container mx-auto px-4 py-8">
               {/* Header */}
               <div className="text-center mb-12">
                 <div className="flex items-center justify-center gap-3 mb-4">
-                  <div className="p-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl animate-float animate-pulse-glow">
+                  <div className="p-3 bg-gradient-to-r from-slate-600 to-slate-800 rounded-xl animate-float animate-pulse-glow">
                     <Wallet className="h-8 w-8 text-white" />
                   </div>
-                  <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                  <h1 className="text-4xl font-bold bg-gradient-to-r from-slate-300 to-slate-100 bg-clip-text text-transparent">
                     Solana Wallet Adapter
                   </h1>
                 </div>
@@ -40,7 +40,7 @@ function App() {
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="flex justify-center">
-                    <WalletMultiButton className="!bg-gradient-to-r !from-purple-500 !to-pink-500 hover:!from-purple-600 hover:!to-pink-600 !border-0 !text-white !font-semibold !px-8 !py-3 !rounded-lg !transition-all !duration-200 !transform hover:!scale-105" />
+                    <WalletMultiButton className="!bg-gradient-to-r !from-slate-700 !to-slate-900 hover:!from-slate-600 hover:!to-slate-800 !border !border-slate-600 !text-white !font-semibold !px-8 !py-3 !rounded-lg !transition-all !duration-200 !transform hover:!scale-105" />
                   </CardContent>
                 </Card>
 

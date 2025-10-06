@@ -73,7 +73,7 @@ export const SolanaFaucet = () => {
         <Card className="glass border-slate-700">
             <CardHeader className="text-center">
                 <div className="flex items-center justify-center gap-3 mb-2">
-                    <div className="p-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg">
+                    <div className="p-2 bg-gradient-to-r from-slate-600 to-slate-800 rounded-lg">
                         <Droplets className="h-6 w-6 text-white" />
                     </div>
                     <CardTitle className="text-2xl text-white">SOL Faucet</CardTitle>
@@ -94,7 +94,7 @@ export const SolanaFaucet = () => {
                         value={amount}
                         onChange={(e: React.ChangeEvent<HTMLInputElement>) => setAmount(Number(e.target.value))}
                         placeholder="Enter amount in SOL"
-                        className="bg-slate-700/50 border-slate-600 text-white placeholder:text-slate-400 focus:border-purple-500 focus:ring-purple-500"
+                        className="bg-slate-700/50 border-slate-600 text-white placeholder:text-slate-400 focus:border-slate-400 focus:ring-slate-400"
                         min="1"
                         max="10"
                         step="0.1"
@@ -124,7 +124,7 @@ export const SolanaFaucet = () => {
                 <Button
                     onClick={getDrop}
                     disabled={isLoading || !publicKey}
-                    className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold py-3 rounded-lg transition-all duration-200 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                    className="w-full bg-gradient-to-r from-slate-700 to-slate-900 hover:from-slate-600 hover:to-slate-800 text-white font-semibold py-3 rounded-lg transition-all duration-200 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none border border-slate-600"
                 >
                     {isLoading ? (
                         <>
