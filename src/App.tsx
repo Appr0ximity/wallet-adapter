@@ -6,6 +6,7 @@ import { SolanaFaucet } from './components/SolanaFaucet';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Wallet } from 'lucide-react';
 import { Balance } from './components/Balance';
+import { SendSolana } from './components/SendSolana';
 
 function App() {
   const devnet = "https://solana-devnet.g.alchemy.com/v2/_TgRmevsH5Z1tLVkQ76sd"
@@ -55,6 +56,9 @@ function App() {
                 </div >
                 <div className="mt-8 relative z-10 w-full">
                   <Balance></Balance>
+                </div>
+                <div className="mt-8 relative z-10 w-full">
+                  <SendSolana></SendSolana>
                 </div>
               </div>
             </div>
