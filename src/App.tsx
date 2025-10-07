@@ -1,13 +1,13 @@
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react'
 import './App.css'
-import { WalletModalProvider, WalletMultiButton } from '@solana/wallet-adapter-react-ui'
+import { WalletModalProvider, WalletMultiButton, WalletDisconnectButton } from '@solana/wallet-adapter-react-ui'
 import '@solana/wallet-adapter-react-ui/styles.css';
 import { SolanaFaucet } from './components/SolanaFaucet';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Wallet } from 'lucide-react';
 
 function App() {
-  const devnet = "https://solana-devnet.g.alchemy.com/v2/a8jFREom7nUuY3UMsFiAfCjDBILUitvJ"
+  const devnet = "https://solana-devnet.g.alchemy.com/v2/_TgRmevsH5Z1tLVkQ76sd"
 
   return (
     <ConnectionProvider endpoint={devnet}>
@@ -31,20 +31,25 @@ function App() {
               </div>
 
               {/* Main Content */}
-              <div className="max-w-2xl mx-auto">
-                <Card className="glass border-slate-700">
+              <div className="max-w-4xl mx-auto">
+                <Card className="glass border-slate-700 relative z-50">
                   <CardHeader className="text-center">
                     <CardTitle className="text-2xl text-white">Wallet Connection</CardTitle>
                     <CardDescription className="text-slate-300">
                       Connect your wallet to start using the faucet
                     </CardDescription>
                   </CardHeader>
-                  <CardContent className="flex justify-center">
-                    <WalletMultiButton className="!bg-gradient-to-r !from-slate-700 !to-slate-900 hover:!from-slate-600 hover:!to-slate-800 !border !border-slate-600 !text-white !font-semibold !px-8 !py-3 !rounded-lg !transition-all !duration-200 !transform hover:!scale-105" />
+                  <CardContent className="flex flex-col items-center gap-4">
+                    <div className="relative z-50">
+                      <WalletMultiButton className="!bg-gradient-to-r !from-slate-700 !to-slate-900 hover:!from-slate-600 hover:!to-slate-800 !border !border-slate-600 !text-white !font-semibold !px-8 !py-3 !rounded-lg !transition-all !duration-200 !transform hover:!scale-105" />
+                    </div>
+                    <div className="relative z-10">
+                      <WalletDisconnectButton className="!bg-gradient-to-r !from-red-700 !to-red-900 hover:!from-red-600 hover:!to-red-800 !border !border-red-600 !text-white !font-semibold !px-6 !py-2 !rounded-lg !transition-all !duration-200 !transform hover:!scale-105" />
+                    </div>
                   </CardContent>
                 </Card>
 
-                <div className="mt-8">
+                <div className="mt-8 relative z-10 w-full">
                   <SolanaFaucet />
                 </div>
               </div>

@@ -73,3 +73,8 @@
 .focus-ring {
   @apply focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-900;
 }
+
+/* Simple wallet adapter z-index fix */
+.wallet-adapter-modal-wrapper {
+  z-index: 9999 !important;
+}

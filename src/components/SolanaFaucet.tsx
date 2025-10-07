@@ -40,16 +40,9 @@ export const SolanaFaucet = () => {
         try {
             const lamports = amount * 1_000_000_000 // Convert SOL to lamports
             const airdropSignature: TransactionSignature = await connection.requestAirdrop(publicKey, lamports)
-            
-            // Get fresh blockhash before confirming
-            const { blockhash, lastValidBlockHeight } = await connection.getLatestBlockhash('confirmed')
 
             // Use a more reliable confirmation method
-            const confirmation = await connection.confirmTransaction({
-                signature: airdropSignature,
-                blockhash,
-                lastValidBlockHeight
-            }, 'confirmed')
+            const confirmation = await connection.confirmTransaction(airdropSignature)
 
             if (confirmation.value.err) {
                 throw new Error(`Transaction failed: ${confirmation.value.err}`)
@@ -70,7 +63,7 @@ export const SolanaFaucet = () => {
     }
 
     return (
-        <Card className="glass border-slate-700">
+        <Card className="glass border-slate-700 w-full">
             <CardHeader className="text-center">
                 <div className="flex items-center justify-center gap-3 mb-2">
                     <div className="p-2 bg-gradient-to-r from-slate-600 to-slate-800 rounded-lg">
@@ -82,7 +75,7 @@ export const SolanaFaucet = () => {
                     Request SOL airdrops on the Solana devnet
                 </CardDescription>
             </CardHeader>
-            <CardContent className="space-y-6">
+            <CardContent className="space-y-6 w-full">
                 <div className="space-y-2">
                     <Label htmlFor="amount" className="text-slate-200 font-medium">
                         Amount (SOL)
@@ -105,7 +98,7 @@ export const SolanaFaucet = () => {
                 </div>
 
                 {message && (
-                    <div className={`flex items-center gap-2 p-3 rounded-lg ${
+                    <div className={`flex items-start gap-2 p-4 rounded-lg w-full ${
                         status === 'success' 
                             ? 'bg-green-900/20 border border-green-500/20 text-green-300' 
                             : status === 'error'
@@ -113,11 +106,11 @@ export const SolanaFaucet = () => {
                             : 'bg-blue-900/20 border border-blue-500/20 text-blue-300'
                     }`}>
                         {status === 'success' ? (
-                            <CheckCircle className="h-4 w-4" />
+                            <CheckCircle className="h-4 w-4 flex-shrink-0 mt-0.5" />
                         ) : status === 'error' ? (
-                            <AlertCircle className="h-4 w-4" />
+                            <AlertCircle className="h-4 w-4 flex-shrink-0 mt-0.5" />
                         ) : null}
-                        <span className="text-sm">{message}</span>
+                        <span className="text-sm break-words overflow-wrap-anywhere min-w-0 flex-1">{message}</span>
                     </div>
                 )}
 
