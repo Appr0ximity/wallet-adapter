@@ -6,8 +6,6 @@ import { Button } from "@/components/ui/button"
 import { DollarSign, RefreshCw, CheckCircle, AlertCircle } from "lucide-react"
 
 export const Balance = ()=>{
-    
-    const inputRef = useRef(null)
     const connection = useConnection()
     const { publicKey } = useWallet()
     const [isLoading, setIsLoading] = useState(false)
